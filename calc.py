@@ -2,13 +2,18 @@ import tkinter as tk
 
 window = tk.Tk()
 
-label_calc_result = tk.Label(master=window, text=0, width=30, height=3)
+label_calc_result = tk.Label(master=window, text='0', width=30, height=3)
 
 label_calc_result.grid(row=0, column=0, columnspan=4)
 
 
 def insert_number_in_label_calc_result(btn_text):
-    label_calc_result['text'] = btn_text
+    current = label_calc_result['text'] 
+
+    if current == '0':
+        label_calc_result['text'] = btn_text
+    else:
+        label_calc_result['text'] += btn_text
     
 
 btn_calc_data = [
