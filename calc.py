@@ -2,54 +2,63 @@ import tkinter as tk
 
 window = tk.Tk()
 
+label_calc_result = tk.Label(master=window, text=0, width=30, height=3)
+
+label_calc_result.grid(row=0, column=0, columnspan=4)
+
+
+def insert_number_in_label_calc_result(btn_text):
+    label_calc_result['text'] = btn_text
+    
+
 btn_calc_data = [
     {'text': '7',
-    'command': lambda : print('7')
+    'command': lambda : insert_number_in_label_calc_result('7')
     }, 
     {'text': '8',
-    'command': lambda : print('8')
+    'command': lambda : insert_number_in_label_calc_result('8')
     }, 
     {'text': '9',
-    'command': lambda : print('9')
+    'command': lambda : insert_number_in_label_calc_result('9')
     },
     {'text': '+',
-    'command': lambda : print('+')
+    'command': lambda : insert_number_in_label_calc_result('+')
     },
     {'text': '4',
-    'command': lambda : print('4')
+    'command': lambda : insert_number_in_label_calc_result('4')
     },
     {'text': '5',
-    'command': lambda : print('5')
+    'command': lambda : insert_number_in_label_calc_result('5')
     },
     {'text': '6',
-    'command': lambda : print('6')
+    'command': lambda : insert_number_in_label_calc_result('6')
     },
     {'text': '-',
-    'command': lambda : print('-')
+    'command': lambda : insert_number_in_label_calc_result('-')
     },
     {'text': '1',
-    'command': lambda : print('1')
+    'command': lambda : insert_number_in_label_calc_result('1')
     },
     {'text': '2',
-    'command': lambda : print('2')
+    'command': lambda : insert_number_in_label_calc_result('2')
     },
     {'text': '3',
-    'command': lambda : print('3')
+    'command': lambda : insert_number_in_label_calc_result('3')
     },
     {'text': '*',
-    'command': lambda : print('*')
+    'command': lambda : insert_number_in_label_calc_result('*')
     },
     {'text': '0',
-    'command': lambda : print('0')
+    'command': lambda : insert_number_in_label_calc_result('0')
     },
     {'text': '.',
-    'command': lambda : print('.')
+    'command': lambda : insert_number_in_label_calc_result('.')
     },
     {'text': 'C',
-    'command': lambda : print('C')
+    'command': lambda : insert_number_in_label_calc_result('C')
     },
     {'text': '=',
-    'command': lambda : print('=')
+    'command': lambda : insert_number_in_label_calc_result('=')
     },
 ]
 
@@ -68,9 +77,6 @@ for i , btn_object in enumerate(btn_objects):
     btn_object.grid(row=(i//4) + 1 , column=i%4, sticky='nsew')
 
 
-label_calc_result = tk.Label(master=window, text=0, width=30, height=3)
-
-label_calc_result.grid(row=0, column=0, columnspan=4)
 
 
 
