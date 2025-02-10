@@ -10,7 +10,9 @@ label_calc_result.grid(row=0, column=0, columnspan=4)
 def insert_number_in_label_calc_result(btn_text):
     current = label_calc_result['text'] 
 
-    if current == '0':
+    if btn_text == 'C':
+        label_calc_result['text'] = '0'
+    elif current == '0':
         label_calc_result['text'] = btn_text
     elif btn_text == '=':
         label_calc_result['text'] = str(eval(current))
