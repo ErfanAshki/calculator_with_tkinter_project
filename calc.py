@@ -94,7 +94,16 @@ for i , btn_object in enumerate(btn_objects):
     btn_object.grid(row=(i//4) + 1 , column=i%4, sticky='nsew')
 
 
+def modify_data(btn_text):
+    current = label_calc_result['text']
+    
+    if btn_text == 'M':
+        current = current[: -1]
+        label_calc_result['text'] = current
+        
 
+btn_modify = tk.Button(master=window, text='M', height=3, command=lambda : modify_data('M'))
 
+btn_modify.grid(row=5, column=0, columnspan=5, sticky='nsew')
 
 window.mainloop()
