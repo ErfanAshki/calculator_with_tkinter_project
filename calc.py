@@ -64,16 +64,14 @@ for btn_data in btn_calc_data:
     )
     btn_objects.append(button)
     
+for i , btn_object in enumerate(btn_objects):
+    btn_object.grid(row=(i//4) + 1 , column=i%4, sticky='nsew')
+
 
 label_calc_result = tk.Label(master=window, text=0, width=30, height=3)
 
 label_calc_result.grid(row=0, column=0, columnspan=4)
 
-
-# btn_7.grid(row=1, column=0, sticky='nsew')
-# btn_8.grid(row=1, column=1, sticky='nsew')
-# btn_9.grid(row=1, column=2, sticky='nsew')
-# btn_plus.grid(row=1, column=3, sticky='nsew')
 
 
 window.mainloop()
