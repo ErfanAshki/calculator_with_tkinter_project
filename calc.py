@@ -12,20 +12,25 @@ def insert_number_in_label_calc_result(btn_text):
 
     if btn_text == 'C':
         label_calc_result['text'] = '0'
+        
     elif current == '0':
         label_calc_result['text'] = btn_text
+        
     elif btn_text == '=':
         label_calc_result['text'] = str(eval(current))
+        
     elif btn_text == '.' and current[-1] == '.':
         pass
-    else:
-        if btn_text in ['+', '-', '*']:
-            if current[-1] in ['+', '-', '*']:
-                label_calc_result['text'] = current[: -1] + btn_text
-            else:
-                label_calc_result['text'] += btn_text
+    
+    elif btn_text in ['+', '-', '*']:
+        
+        if current[-1] in ['+', '-', '*']:
+            label_calc_result['text'] = current[: -1] + btn_text
         else:
             label_calc_result['text'] += btn_text
+            
+    else:
+        label_calc_result['text'] += btn_text
     
 
 btn_calc_data = [
