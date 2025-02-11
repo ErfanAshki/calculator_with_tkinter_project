@@ -7,6 +7,16 @@ label_calc_result = tk.Label(master=window, text='0', width=30, height=3)
 label_calc_result.grid(row=0, column=0, columnspan=4)
 
 
+def check_dot_in_decimal_numbers(current):
+    for char in current[::-1]:
+        if char == '.':
+            return True
+        elif char in ['+', '-', '*']:
+            return False
+        
+    return False
+
+
 def insert_number_in_label_calc_result(btn_text):
     current = label_calc_result['text'] 
 
@@ -19,15 +29,12 @@ def insert_number_in_label_calc_result(btn_text):
     elif btn_text == '=':
         label_calc_result['text'] = str(eval(current))
         
-    elif btn_text == '.' and current[-1] == '.':
-        pass
-    
-    elif btn_text in ['+', '-', '*']:
-        
-        if current[-1] in ['+', '-', '*']:
-            label_calc_result['text'] = current[: -1] + btn_text
-        else:
+    elif btn_text == '.':
+        if not check_dot_in_decimal_numbers(current):
             label_calc_result['text'] += btn_text
+    
+    elif btn_text in ['+', '-', '*'] and current[-1] in ['+', '-', '*']:
+        label_calc_result['text'] = current[: -1] + btn_text
             
     else:
         label_calc_result['text'] += btn_text
