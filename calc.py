@@ -39,6 +39,7 @@ def insert_number_in_label_calc_result(btn_text):
     else:
         label_calc_result['text'] += btn_text
     
+    
 
 btn_calc_data = [
     {'text': '7',
